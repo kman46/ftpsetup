@@ -1,3 +1,21 @@
+#############################################################################
+# FTP Setup
+#   Copyright (C) 2019  Keval Mandrekar and Owais Shaikh
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#############################################################################
+
 #!/bin/bash
 echo "#####################################"
 echo "#          FTP Config  v1.0         #"
@@ -32,8 +50,8 @@ then
    echo -e "---\nStopped all services!";
 elif [ $option == a ]
 then
- 	echo "chown_username=$USER" | tee -a vsftpd.conf
- 	sudo rm //etc/vsftpd.conf.backup
+  echo "chown_username=$USER" | tee -a vsftpd.conf
+  sudo rm //etc/vsftpd.conf.backup
     sudo mv //etc/vsftpd.conf //etc/vsftpd.conf.backup
     sudo cp vsftpd.conf //etc/
     sudo systemctl restart vsftpd
@@ -48,17 +66,17 @@ elif [ $option == i ]
 then
     OSInfo=$(cat /etc/*-release)
     if [[ $OSInfo =~ Manjaro ]];
-	then
-    	sudo pacman -Sy --noconfirm vsftpd
+  then
+      sudo pacman -Sy --noconfirm vsftpd
     elif [[ $OSInfo =~ Red ]];
-	then
-		sudo yum install vsftpd
-	elif [[ $OSInfo =~ Ubuntu ]];
-	then
-		sudo apt-get update
-		sudo apt-get install vsftpd
-	else
-    	echo "False"
-	fi
+  then
+    sudo yum install vsftpd
+  elif [[ $OSInfo =~ Ubuntu ]];
+  then
+    sudo apt-get update
+    sudo apt-get install vsftpd
+  else
+      echo "False"
+  fi
     echo -e "Done! Restart script to AUTOCONFIGURE";
 fi
