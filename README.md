@@ -11,6 +11,6 @@ the disks will be unmounted and mounted in your local folder
 2. Then change to its directory:
 ```cd ftpsetup```
 3. Give it execute permissions:
-```chmod +x ftpconfig.sh```
+```chmod +x ftpsetup.sh```
 4. And finally execute it:
-```./ftpconfig.sh```
+```./ftpsetup.sh```
