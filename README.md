@@ -2,7 +2,9 @@
 
 A simple script to configure ftp server, sftpd in this case on bash.
 the default folder accessible through ftp will be your home directory.
-the disks will be unmounted and mounted in your local folder 
+this script features menu  which allow you to start,stop, configure or install vsftpd on your device.
+this script can be run on flavour of linux like : Ubuntu, Manjaro(arch), fedora. 
+
 
 #### Installation
 
